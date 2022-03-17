@@ -35,6 +35,5 @@ jobs:
         with:
           context: .
           push: true
-          labels: | 
-            ${{ env.IMAGE_NAME }}:${{ secrets.GITHUB_TOKEN }}
-            ${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.COMMIT_SHA }}
+          labels: ${{ env.IMAGE_NAME }}
