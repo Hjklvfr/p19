@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: pie19/awesome-shop
+  IMAGE_NAME: ghcr.io/pie19/awesome-shop
 
 jobs:
   Test:
@@ -34,7 +34,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v1
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.IMAGE_NAME }}
       -
         name: Build and push
         uses: docker/build-push-action@v1
@@ -42,4 +42,4 @@ jobs:
           context: .
           push: true
           tags: ${{ env.COMMIT_SHA }}
-          labels: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          labels: ${{ env.IMAGE_NAME }}
