@@ -23,6 +23,9 @@ jobs:
         name: Set repo name
         run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       -
+        name: Echo repo name
+        run: echo '${{ github.repository }}'
+      -
         name: Checkout
         uses: actions/checkout@v2
       -
