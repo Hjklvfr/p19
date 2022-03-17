@@ -9,6 +9,6 @@ FROM eclipse-temurin:17-jre-alpine as runtime
 EXPOSE 8080
 
 RUN mkdir /app
-COPY --from=build /home/gradle/src/build/libs/*.war /app/p19.war
+COPY --from=build /home/gradle/src/build/libs/*.war /app/
 
-ENTRYPOINT ["java", "-jar", "/app/p19.war"]
+ENTRYPOINT ["java", "-jar", "/app/demo-0.0.1-SNAPSHOT.war"]
