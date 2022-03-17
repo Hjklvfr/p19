@@ -42,4 +42,6 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           push: true
-          tags: ${{ env.IMAGE_NAME }}/${{ env.COMMIT_SHA }}
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }}
+            ${{ env.IMAGE_NAME }}:latest
