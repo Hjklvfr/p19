@@ -1,8 +1,14 @@
 name: test
+
 on:
   push:
     branches:
       - 'main'
+
+env:
+  REGISTRY: ghvr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   Test:
     runs-on: ubuntu-latest
