@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ env.REGISTRY }}/${{ github.GITHUB_ACTION_REPOSITORY }}
+  IMAGE_NAME: ghcr.io/${{ github.GITHUB_ACTION_REPOSITORY }}
 
 jobs:
   Image:
