@@ -4,7 +4,7 @@ COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle build --no-daemon
 
-FROM eclipse-temurin:17-jre-alpine as runtime
+FROM eclipse-temurin:17-jre-alpine
 
 EXPOSE 8080
 
