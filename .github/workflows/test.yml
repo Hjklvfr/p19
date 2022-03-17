@@ -33,8 +33,6 @@ jobs:
         with:
           images: pie19/awesome-shop
           tag-custom: latest
-          tag-semver: |
-            {{ raw }}
       -
         name: Build and push
         uses: docker/build-push-action@v1
