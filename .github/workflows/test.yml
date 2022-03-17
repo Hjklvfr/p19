@@ -27,6 +27,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
+        name: Setup metadata
+        id: meta
+        uses: docker/metadata-action@v1
+        with:
+          images: pie19/awesome-shop
+          tag-custom: latest
+          tag-semver: |
+            {{ raw }}
+      -
         name: Build and push
         uses: docker/build-push-action@v1
         with:
