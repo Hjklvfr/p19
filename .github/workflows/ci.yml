@@ -1,4 +1,4 @@
-name: test
+name: ci
 
 on:
   push:
@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: ghcr.io/hjklvfr/p19
 
 jobs:
-  Test:
+  Image:
     runs-on: ubuntu-latest
     permissions:
       contents: read
