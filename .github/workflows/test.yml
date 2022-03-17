@@ -30,18 +30,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
-        name: Setup metadata
-        id: meta
-        uses: docker/metadata-action@v1
-        with:
-          images: ${{ env.IMAGE_NAME }}
-      -
         name: Build and push
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: ${{ env.COMMIT_SHA }}
           labels: | 
             ${{ env.IMAGE_NAME }}:${{ secrets.GITHUB_TOKEN }}
             ${{ env.IMAGE_NAME }}:latest
