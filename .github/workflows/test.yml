@@ -31,7 +31,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v1
         with:
-#          images: ${{ env.IMAGE_NAME }}
+          images: pie19/awesome-shop
           tag-custom: latest
       -
         name: Build and push
