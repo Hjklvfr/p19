@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/pie19/awesome-shop
+  IMAGE_NAME: ghcr.io/Hjklvfr/p19
 
 jobs:
   Test:
