@@ -6,7 +6,7 @@ on:
       - 'main'
 
 env:
-  REGISTRY: ghvr.io
+  REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
