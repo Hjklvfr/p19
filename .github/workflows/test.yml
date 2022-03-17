@@ -41,5 +41,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.COMMIT_SHA }}
-          labels: ${{ env.IMAGE_NAME }}
+          tags: ${{ env.IMAGE_NAME }}/${{ env.COMMIT_SHA }}
