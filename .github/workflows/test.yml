@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/Hjklvfr/p19
+  IMAGE_NAME: ghcr.io/hjklvfr/p19
 
 jobs:
   Test:
