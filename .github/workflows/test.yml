@@ -1,0 +1,7 @@
+name: test
+on: [push]
+jobs:
+  Test:
+    runs-on: alpine-latest
+    steps:
+      - run: echo "test123"
