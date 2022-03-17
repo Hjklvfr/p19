@@ -20,6 +20,9 @@ jobs:
         name: Set short commit hash in env
         run: echo "COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
       -
+        name: Set repo name
+        run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      -
         name: Checkout
         uses: actions/checkout@v2
       -
@@ -43,5 +46,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }}
-            ${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA }}
+            ghcr.io/${{ env.REPOSITORY_NAME }}:latest
