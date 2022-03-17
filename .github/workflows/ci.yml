@@ -7,7 +7,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/${{ github.GITHUB_ACTION_REPOSITORY }}
 
 jobs:
   Image:
@@ -21,7 +20,7 @@ jobs:
         run: echo "COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
       -
         name: Set repo name
-        run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+        run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk '{print tolower($0)}')" >> $GITHUB_ENV
       -
         name: Echo repo name
         run: echo '${{ github.repository }}'
@@ -49,5 +48,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA }}
-            ghcr.io/${{ env.REPOSITORY_NAME }}:latest
+            ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA }}
+            ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:latest
