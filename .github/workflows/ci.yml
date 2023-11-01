@@ -49,5 +49,5 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA }}
-            ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ env.GITHUB_REF_NAME }}
+            ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ env.GITHUB_REF_NAME##*/ }}
             ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:latest
